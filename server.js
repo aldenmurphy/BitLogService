@@ -1,13 +1,13 @@
 // server.js
 //
-import path from 'path';
+// import path from 'path';
 
 const express = require('express');
 const { Pool, Client } = require('pg');
 const app = express();
 
 app.use(express.json());
-app.use(express.static(path.join(__dirname, 'client', 'build')));
+// app.use(express.static(path.join(__dirname, 'client', 'build')));
 
 app.use(function(req, res, next) {
   res.header('Access-Control-Allow-Origin', '*');
@@ -22,9 +22,9 @@ if (process.env.NODE_ENV === 'production') {
   app.use(express.static('client/build'));
 
   // Return the main index.html, so react-router render the route in the client
-  app.get('/', (req, res) => {
-    res.sendFile(path.resolve('client/build', 'index.html'));
-  });
+  // app.get('/', (req, res) => {
+  //   res.sendFile(path.resolve('client/build', 'index.html'));
+  // });
 }
 
 // pools will use environment variables
