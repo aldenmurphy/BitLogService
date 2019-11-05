@@ -2,8 +2,8 @@
 
 const express = require('express');
 const { Pool, Client } = require('pg');
-const app = express();
 
+const app = express();
 app.use(express.json());
 
 app.use(function (req, res, next) {
