@@ -4,6 +4,9 @@ const express = require('express');
 const { Pool, Client } = require('pg');
 
 const app = express();
+
+console.log("Starting express server.");
+
 app.use(express.json());
 
 app.use(function(req, res, next) {
@@ -23,6 +26,8 @@ const pool = new Pool({
   password: 'B!tt3rsw33t2D0',
   port: 5432,
 })
+
+console.log("Initialization complete.");
 
 const COLUMNS = ['record', 'created'];
 
