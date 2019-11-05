@@ -14,7 +14,7 @@ app.use(function(req, res, next) {
   res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
   next();
 });
-app.set('port', process.env.PORT || 4001);
+app.set('port', process.env.PORT || 8081);
 
 //Express only serves static assets in production
 console.log('NODE_ENV: ', process.env.NODE_ENV);
