@@ -5,7 +5,7 @@ const { Pool, Client } = require('pg');
 
 const app = express();
 
-console.log("Starting express server.");
+console.log("Starting express server on", process.env.PORT);
 
 app.use(express.json());
 
