@@ -33,7 +33,11 @@ const COLUMNS = ['record', 'created'];
 
 app.get('/api/records', (req, res) => {
 
-  let queryString = `SELECT id, user_id, record, created from bitlog.log WHERE user_id = '4c867b19-2c1e-4181-848f-4179b66336aa' ORDER BY created DESC`;
+  let user_id = req.query.user_id;
+
+  console.log('user_id', user_id);
+
+  let queryString = `SELECT id, user_id, record, created from bitlog.log WHERE user_id = '${user_id}' ORDER BY created DESC`;
 
   pool.query(queryString, function (err, result, fields) {
 
